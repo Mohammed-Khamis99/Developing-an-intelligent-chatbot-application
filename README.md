@@ -1,13 +1,13 @@
 #Build an Intelligent Chatbot Application
 Develop an intelligent chatbot application leveraging the latest advancements in conversational AI and large language models. This project integrates generative AI technologies to create a sophisticated and responsive chatbot experience.
 
-1   ![Image](https://github.com/user-attachments/assets/8b82095c-8dd3-4423-a89d-4d117e64e0d3)
+![Image](https://github.com/user-attachments/assets/8b82095c-8dd3-4423-a89d-4d117e64e0d3)
 
 Solution deployment
 I start by deploying the application infrastructure through the CloudFormation template.
 This crucial decision aims to optimize infrastructure provisioning and significantly reduce deployment times.
 
-2   ![Image](https://github.com/user-attachments/assets/251bc036-5a81-4e57-a50a-a0dc81fe1b53)
+![Image](https://github.com/user-attachments/assets/251bc036-5a81-4e57-a50a-a0dc81fe1b53)
 
 ##Configure and Deploy the Frontend:
 Provision all necessary AWS services. Then, configure your frontend application and deploy the files.
@@ -26,7 +26,7 @@ Access these values from the Outputs section of your CloudFormation template. Fo
 3.	Select the Outputs tab from the right menu.
 4.	Save the files after updating them.
 
-3   ![Image](https://github.com/user-attachments/assets/dcf16527-1245-4a06-89ec-48c5012d201f)
+![Image](https://github.com/user-attachments/assets/dcf16527-1245-4a06-89ec-48c5012d201f)
 
 Your configs.tsx and aws-exports.tsx files should look like this:
 configs.tsx
@@ -60,7 +60,7 @@ o	assets/index-XXXXXX.js
 o	Any static files (e.g., images) you included in your application
 7.	Scroll to the bottom of the page and click Upload.
 
-4    ![Image](https://github.com/user-attachments/assets/9d3a066e-4798-4b34-a31f-60d33fddaf39)
+![Image](https://github.com/user-attachments/assets/9d3a066e-4798-4b34-a31f-60d33fddaf39)
 
 You have now completed the deployment and configuration process for the application. Proceed to the chatbot setup.
 ________________________________________
@@ -69,39 +69,40 @@ Most Amazon Lex configurations are pre-configured by the CloudFormation template
 1.	Go to the Amazon Lex console in the region where you deployed the CloudFormation stack.
 2.	Select Bots from the left menu.
 
-5     ![Image](https://github.com/user-attachments/assets/740af126-2728-4340-b331-b239e5873f8d)
+![Image](https://github.com/user-attachments/assets/740af126-2728-4340-b331-b239e5873f8d)
 
 3.	In the Bots list, select MeetyBot.
 
-6    ![Image](https://github.com/user-attachments/assets/5b95a522-b1fc-467b-aab6-bbbd60f9d38e)
+![Image](https://github.com/user-attachments/assets/5b95a522-b1fc-467b-aab6-bbbd60f9d38e)
 
 4.	Under the Deployment section, select Aliases and click on TestBotAlias.
 
-7   ![Image](https://github.com/user-attachments/assets/5fb302b2-4172-4668-b269-0cf57499742c)
+![Image](https://github.com/user-attachments/assets/5fb302b2-4172-4668-b269-0cf57499742c)
 
 5.	From the Languages list, select English (US).
 6.	In the Lambda function configuration menu, select bot-function-meety as the source and $LATEST as the version.
 
-8   ![Image](https://github.com/user-attachments/assets/d3f93db8-aa21-4a35-8a43-91baa267ed77)
+![Image](https://github.com/user-attachments/assets/d3f93db8-aa21-4a35-8a43-91baa267ed77)
 
 The final step is to configure the triggering of the function when the BookMeeting intent is fulfilled. For that, do the following:
 1.	On the left menu, select Intents under the English (US) menu.
 2.	Click on the BookMeeting intent.
 
-9    ![Image](https://github.com/user-attachments/assets/091e1af9-0af1-4a7d-ac08-cfd3fea7e168)
+![Image](https://github.com/user-attachments/assets/091e1af9-0af1-4a7d-ac08-cfd3fea7e168)
 
 3.	Scroll down to the Fulfillment section and click the toggle button to activate it. This ensures the Lambda function triggers every time this intent is fulfilled.
 
-10   ![Image](https://github.com/user-attachments/assets/4a32eede-886f-4c46-b429-5e742da79af9)
+![Image](https://github.com/user-attachments/assets/4a32eede-886f-4c46-b429-5e742da79af9)
 
 4.	Click Save Intent in the bottom right.
 5.	Select Build in the top right.
 The chatbot build process takes approximately two minutes. Wait until you see a green banner with a success message.
 
-11    ![Image](https://github.com/user-attachments/assets/7152e593-d6dd-4b19-a871-f13b76b2b25e)
+![Image](https://github.com/user-attachments/assets/7152e593-d6dd-4b19-a871-f13b76b2b25e)
 
 Customize or add more utterances to identify the StartMeety intent. After any changes, ensure you save the intent and rebuild the chatbot.
 
+ ![Image](https://github.com/user-attachments/assets/617744cd-3081-4cd8-b605-f70ca1489f06)
  
 Perform the same exercise for the BookMeeting intent. Amazon Lex expects different utterances for this intent and includes five slots to collect necessary data:
 •	FullName: The name of the attendee.
@@ -120,8 +121,8 @@ To access the admin portal and manage meeting requests, follow these steps:
 4.	Select your email and click Verify. You will now receive an email with a temporary code.
 5.	Copy the verification code from your email and paste it into the confirmation form.
 
-13   ![Image](https://github.com/user-attachments/assets/93db720e-8755-4c06-9e79-76cc9c566aa0)
+![Image](https://github.com/user-attachments/assets/93db720e-8755-4c06-9e79-76cc9c566aa0)
 
-14   ![Image](https://github.com/user-attachments/assets/90938782-cd2c-46dc-b6a5-98e27507dcbe)
+![Image](https://github.com/user-attachments/assets/90938782-cd2c-46dc-b6a5-98e27507dcbe)
 
-15    ![Image](https://github.com/user-attachments/assets/aee5d2e9-1572-48b8-ab82-c59a2d937f38)
+![Image](https://github.com/user-attachments/assets/aee5d2e9-1572-48b8-ab82-c59a2d937f38)
